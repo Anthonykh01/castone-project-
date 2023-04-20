@@ -1,6 +1,5 @@
 <?php
 
-
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
@@ -33,13 +32,24 @@ if ($result->num_rows > 0) {
   $row = $result->fetch_assoc();
   
   if (password_verify($password, $row["password"])) {
-    echo json_encode(["message" => "Login successful."]);
+    // Prepare the response with the email and a success message
+    $response = [
+        'message' => 'Login successful.',
+        'email' => $row['email']
+    ];
   } else {
-    echo json_encode(["message" => "Incorrect password."]);
+    $response = [
+        'message' => 'Incorrect password.'
+    ];
   }
 } else {
-  echo json_encode(["message" => "Email does not exist."]);
+  $response = [
+      'message' => 'Email does not exist.'
+  ];
 }
+
+// Send the JSON response
+echo json_encode($response);
 
 $conn->close();
 ?>

@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./third-page.page.scss'],
 })
 export class ThirdPagePage implements OnInit {
+  user: any;
 
   constructor() { }
 
   ngOnInit() {
+    //this.user = JSON.parse(localStorage.getItem('user'));
+    this.user = localStorage.getItem('email');
+
   }
 
 }

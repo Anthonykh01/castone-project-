@@ -25,7 +25,7 @@ export class LoginPage {
       (response) => {
         this.presentToast(response.message);
         if (response.message === 'Login successful.') {
-          // Navigate to the third page
+          localStorage.setItem('email', response.email);
           this.router.navigate(['/third-page']);
         }
       },
