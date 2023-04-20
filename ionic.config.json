@@ -1,0 +1,7 @@
+{
+  "name": "finaleep",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
