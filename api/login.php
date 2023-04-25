@@ -35,7 +35,8 @@ if ($result->num_rows > 0) {
     // Prepare the response with the email and a success message
     $response = [
         'message' => 'Login successful.',
-        'email' => $row['email']
+        'email' => $row['email'],
+        'id' => $row['id']
     ];
   } else {
     $response = [

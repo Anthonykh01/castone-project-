@@ -1,6 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>thirdPage</ion-title>
+    <ion-title>Product Catalog</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="viewCart()">
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -11,8 +16,31 @@
     </ion-card-header>
     <ion-card-content>
       <p>Welcome, {{ user }}!</p>
-
     </ion-card-content>
   </ion-card>
 
+  <ng-container *ngFor="let category of categories">
+    <h2>{{ category }}</h2>
+    <div class="scrollable-container">
+      <div class="product-wrapper" *ngFor="let product of productsByCategory[category]">
+        <ion-card class="product-card">
+          <img [src]="product.image_url" alt="{{ product.name }}" />
+          <ion-card-header>
+            <ion-card-title>{{ product.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ product.description }}</p>
+            <ion-item lines="none">
+              <ion-label><strong>Price:</strong></ion-label>
+              <ion-text>{{ product.price }}</ion-text>
+            </ion-item>
+            <ion-button expand="full" (click)="addToCart(product.id)">
+              <ion-icon slot="start" name="cart"></ion-icon>
+              Add to Cart
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </ng-container>
 </ion-content>

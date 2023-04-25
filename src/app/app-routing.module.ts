@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'third-page',
     loadChildren: () => import('./pages/third-page/third-page.module').then(m => m.ThirdPagePageModule),
+  },
+  {
+    path: 'shopping-cart',
+    component: ShoppingCartComponent,
   },
 ];
 

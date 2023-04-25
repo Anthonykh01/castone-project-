@@ -26,6 +26,8 @@ export class LoginPage {
         this.presentToast(response.message);
         if (response.message === 'Login successful.') {
           localStorage.setItem('email', response.email);
+          localStorage.setItem('user_id', response.id);
+          console.log('Stored user_id:', response.id);
           this.router.navigate(['/third-page']);
         }
       },
