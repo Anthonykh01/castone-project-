@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Login</ion-title>
   </ion-toolbar>
@@ -18,6 +18,42 @@
         </ion-item>
         <ion-button expand="block" (click)="login()">Login</ion-button>
         <p>Don't have an account? <a routerLink="/registration">Register</a></p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content> -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="login-page">
+  <ion-grid>
+    <ion-row class="ion-align-items-center height-100">
+      <ion-col size-lg="6" size-md="8" size-xs="10" offset-lg="3" offset-md="2" offset-xs="1">
+        <div class="login-card">
+          <h2>Welcome back!</h2>
+
+          <ion-item lines="none">
+            <ion-icon slot="start" name="mail-outline"></ion-icon>
+            <ion-input [(ngModel)]="user.email" type="email" placeholder="Email" required></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+            <ion-input [(ngModel)]="user.password" type="password" placeholder="Password" required></ion-input>
+          </ion-item>
+
+          <ion-button expand="full" class="custom-button" (click)="login()">
+            <ion-icon slot="start" name="log-in-outline"></ion-icon>Login
+          </ion-button>
+
+          <div class="ion-text-center">
+            <p>Don't have an account? <a routerLink="/registration">Register</a></p>
+            <p><a routerLink="/forgot-password">Forgot Password?</a></p>
+          </div>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>

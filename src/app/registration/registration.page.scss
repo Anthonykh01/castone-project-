@@ -1,0 +1,45 @@
+.registration-page {
+    ion-toolbar {
+      background: #242424;
+      ion-title {
+        color: #ffffff;
+      }
+    }
+  
+    .register-card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+  
+      h2 {
+        text-align: center;
+        color: #242424;
+        margin-bottom: 20px;
+      }
+  
+      ion-item {
+        margin-top: 10px;
+        ion-icon {
+          color: #242424;
+        }
+        ion-input {
+          color: #242424;
+        }
+      }
+  
+      .custom-button {
+        --background: #242424;
+        --color: #ffffff;
+        margin-top: 20px;
+        border-radius: 10px;
+      }
+  
+      .ion-text-center {
+        margin-top: 20px;
+        a {
+          color: #242424;
+        }
+      }
+    }
+  }
